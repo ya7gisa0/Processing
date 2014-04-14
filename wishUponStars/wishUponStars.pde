@@ -82,14 +82,14 @@ void draw() {
     //image(images[(frame+offset) % numFrames], x, height/2);
     //offset+=2;
   }
-
+//changed 8000
   closestValue = 8000;
 
   kinect.update();
   
 
   int[] depthValues = kinect.depthMap();
-
+//y 480 x 640
   for (int y = 0; y < 480; y++) {
     for (int x = 0; x < 640; x++) {
       int i = x + y * 640;
@@ -98,8 +98,8 @@ void draw() {
       if (currentDepthValue > 0 && currentDepthValue < closestValue) {
 
         closestValue = currentDepthValue;
-        closestX = x;
-        closestY = y;
+        closestX = -x+640;
+        closestY = y+40;
       }
     }
   }
@@ -185,7 +185,7 @@ class Shape { // Even though there are multiple objects, we still only need one 
   }
 
   void mouseHover() {
-    if (closestX>xpos -20 && closestX < xpos+20 && closestY  > ypos-20 && closestY < ypos + 20) {
+    if (closestX>xpos -30 && closestX < xpos+30 && closestY  > ypos-20 && closestY < ypos + 20) {
       if (number == 4) {
         number=0;
       }
