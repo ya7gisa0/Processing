@@ -36,7 +36,7 @@ void draw() {
   translate(width/2, height/2);
   // define how many times bezier vertex drawing is called
   int loopTimes = 8000;
-  // define the max val of vezier might appear
+  // define the max val of a bezier image might appear
   int maxRandomVal = 360;
   //if already pressed
   if(animationPhase > 1){
@@ -79,7 +79,7 @@ void draw() {
     noFill();
     //rotate 90 degrees
     rotate(PI/4);
-    //make the iconic image in the center using bezier
+    //make the iconic image in the center using bezier curve
     for(int i=0; i < 4; i++) {
       if(i!=0){rotate(PI/2);}
       bezier(-25, 25, 25, -25, 25, 25, -25, -25);
